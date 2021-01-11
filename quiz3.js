@@ -25,11 +25,11 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
 function secondIndexOf(s1, s2) {
     // Use indexOf twice.
-    let newS1= s1
-    let newS2= s2
-    let count = s1.match( /s2/g ).length ;
-    let newS1 = s1.indexOf(s2);
-    return newS1
+    // let newS1= s1
+    // let newS2= s2
+    // let count = s1.match( /s2/g ).length ;
+    // let newS1 = s1.indexOf(s2);
+    // return newS1
 
 
 }
@@ -103,26 +103,16 @@ function repdigit(n) {
 // 10で割って切り捨てることにより、nの10桁を計算します。
 // 1桁と10桁を比較します。
 
-    let ones = n[0]
-    let tens = n%10
-    if(n.length == 2){
-
-
-    }
-
-
-
-    if(n%2 == 0){
-
-    }
-
-
-    if(n[0] == n[1]){
+    let ones = Math.floor(n%10)
+    let tens = Math.floor((n/10) % 10)
+    if(ones == tens){
         console.log("Repdigit!")
     }
     else{
         console.log("No Repdigit!")
+
     }
+
 }
 repdigit(33)
 
@@ -139,7 +129,15 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
 function unequal(a, b, c) {
     //return a !== b && ...
+    if( a !== b && b !== c && a !== c){
+        console.log(true);
+    }
+    else{
+        return console.log(false); 
+    }
+
 }
+unequal(1, 3, 2)
 
 
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -149,9 +147,8 @@ Which of these alerts are going to execute?
 What will the results of the expressions be inside if(...)?
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
-if (-1 || 0) alert('first');
-if (-1 && 0) alert('second');
-if (null || -1 && 1) alert('third');
+
+// if (null || -1 && 1) alert('third');
 
 
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -171,4 +168,4 @@ For an empty string or cancelled input, show “Canceled”
 Refer to the schema below:
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 
-Ô
+// Ô
