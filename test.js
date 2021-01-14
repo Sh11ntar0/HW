@@ -14,10 +14,12 @@ I HATE BEETS
 function rant(a) {
     let upper = a.toUpperCase();
 
-    return upper;
+    console.log(upper);
+    console.log(upper);
+    console.log(upper);
 
 }
-rant("I hate beets");
+// rant("I hate beets");
 
 
 
@@ -40,7 +42,7 @@ multiply(5,4) //20
 function multiply(x, y) {
     return x * y
 }
-multiply(5, 4)
+// multiply(5, 4)
 
 
 
@@ -74,7 +76,7 @@ function isShortsWeather(temperature) {
     }
     return false
 }
-isShortsWeather(70)
+// isShortsWeather(70)
 
 
 
@@ -98,9 +100,11 @@ lastElement([]) //null
 function lastElement(arr) {
 
 }
-lastElement([3, 5, 7]) //7
+// lastElement([3, 5, 7]) //7
 
-
+// (condition) ? true : false
+// (isDrunk === 1) ? "Yes! GO HOME" : "NO DRINK MORE!"
+// if(isDrunk === 1) {return "YES"} else{return"NO!}
 
 
 
@@ -117,10 +121,9 @@ capitalize('pamplemousse') //"Pamplemousse"
 capitalize('squid') //"Squid"
 =========================================================== */
 function capitalize(str) {
-
-
+    return str.charAt(0).toUpperCase().concat(atr.slice(1));
 }
-capitalize('eggplant') //"Eggplant"
+// capitalize('eggplant') //"Eggplant"
 
 
 
@@ -138,13 +141,23 @@ sumArray([1,2,3]) //6
 sumArray([2,2,2,2]) //8
 sumArray([50,50,2]) //102
 =========================================================== */
-function sumArray([a, b, c, d]) {
-    return (a + b + c + d);
+function sumArray(arr) {
+    // let total =0;
+    // for(let i=0; i < arr.length; ++i){
+    //     total += arr[i]
+    // }
+
+    // return total
+
+    return arr.reduce((accumulator, currentValue) => accumulator + currentValue)
+
+
+
 
 
 }
-sumArray([1, 2, 3]) //6
-sumArray([2, 2, 2, 2]) //8
+// sumArray([1, 2, 3]) //6
+// sumArray([2, 2, 2, 2]) //8
 
 
 
@@ -170,31 +183,40 @@ returnDay(1) //"Monday"
 returnDay(4) //"Thursday"
 returnDay(8) //null
 =========================================================== */
-function returnDay(a) {
-    if (a == 1) {
-        return "Monday";
+const weekDay = ["Mon", "Tue", "Wen", "Thur", "Fri", "Sat", "Sun"]
+
+function returnDay(arr) {
+    // if (a == 1) {
+    //     return "Monday";
+    // }
+    // else if (a == 2) {
+    //     return "Tuesday";
+    // }
+    // else if (a == 3) {
+    //     return "Wednesday";
+    // }
+    // else if (a == 4) {
+    //     return "Thursday";
+    // }
+    // else if (a == 5) {
+    //     return "Friday";
+    // }
+    // else if (a == 6) {
+    //     return "Saturday";
+    // }
+    // else if (a == 7) {
+    //     return "Sunday";
+    // }
+    // return null;
+    if (1 <= num && num <= 7) {
+        return weekDay[num - 1]
+    } else {
+        return null;
     }
-    else if (a == 2) {
-        return "Tuesday";
-    }
-    else if (a == 3) {
-        return "Wednesday";
-    }
-    else if (a == 4) {
-        return "Thursday";
-    }
-    else if (a == 5) {
-        return "Friday";
-    }
-    else if (a == 6) {
-        return "Saturday";
-    }
-    else if (a == 7) {
-        return "Sunday";
-    }
-    return null;
+
+
 }
-returnDay(4) //"Thursday"
+// returnDay(4) //"Thursday"
 
 
 
@@ -222,9 +244,9 @@ function isSnakeEyes(x, y) {
 
 
 }
-isSnakeEyes(1, 5); //Not Snake Eyes!
-isSnakeEyes(6, 3); //Not Snake Eyes!
-isSnakeEyes(1, 1); //Snake Eyes!
+// isSnakeEyes(1, 5); //Not Snake Eyes!
+// isSnakeEyes(6, 3); //Not Snake Eyes!
+// isSnakeEyes(1, 1); //Snake Eyes!
 
 
 
@@ -255,7 +277,7 @@ function calculateDogAge(a) {
 
 
 }
-calculateDogAge(12); //Your doggie is 84 years old in dog years!
+// calculateDogAge(12); //Your doggie is 84 years old in dog years!
 
 
 
@@ -274,15 +296,29 @@ isPangram('abcdefghijklmnopqrstuvwxyz'); //true
 isPangram('the quick brown fox jumps over the lazy dog') //true
 isPangram('five boxing wizards jump quickly at it'); //false
 =========================================================== */
+const ALPHABET = [...'abcdefghijklmnopqrstuvwxyz']
+function isPangram(str) {
+    // str = str.toLowerCase();
+    // let count =0;
 
-function isPangram(a) {
-    let pangram = /[a-z]/g;
-    return a.test(pangram);
+    // for(let i=0; i < ALPHABET.length; i++){
+    //     let letter = ALPHABET[i];
+    //     if(str.indexOf(letter) > -1){
+    //         count++;
+    //     }
+    // }
+    // // if(count === 26) return trueelse
+    // // return false
+    // return count === 26 ? ture : false
 
+    // 2nd solution---------------------------------------
+    // return ALPHABET.every((letter) => str.toLowerCase().includes(letter))
+    // 3rd solution--------------------------
+    return [...new Set(str.toLowerCase().mach(/[a-z]/g))].length === 26
 }
-isPangram('abcdefghijklmnopqrstuvwxyz'); //true
-isPangram('the quick brown fox jumps over the lazy dog'); //true
-isPangram('five boxing wizards jump quickly at it'); //false
+// isPangram('abcdefghijklmnopqrstuvwxyz'); //true
+// isPangram('the quick brown fox jumps over the lazy dog'); //true
+// isPangram('five boxing wizards jump quickly at it'); //false
 
 
 
@@ -299,14 +335,19 @@ in that array.
 // evens([1, 2, 3, 4, 5, 6, 7, 8]);
 =========================================================== */
 function evens(arr) {
-    let counter = 0
-    for (let i = 0; i < arr.length; i++) {
-        counter += arr[i];
-    }
-    return counter / arr.length
+    // let finalArr =[];
+    // for (let i=0; i< arr.length; i++){
+    //     if(arr[i] % 2 === 0){
+    //         finalArr.push(arr[i])
+    //     }
+    // }
+    // return finalArr
+
+    return arr.filter((e) => e%2 === 0)
+
 }
 
-evens([1, 2, 3, 4, 5, 6, 7, 8]);
+// evens([1, 2, 3, 4, 5, 6, 7, 8]);
 
 
 
@@ -323,15 +364,19 @@ max([1, 5, 10, 15]); //15
 max([99, 0, -1, 45]); //99
 =========================================================== */
 function max(arr) {
-    let maxnum = 0;
-    for (let i = 0; i < arr.length; i++) {
-        if(arr[i]> maxnum){
-            maxnum = arr[i];
-        }
-    }
-    return maxnum
+    // let maxnum = 0;
+    // for (let i = 0; i < arr.length; i++) {
+    //     if (arr[i] > maxnum) {
+    //         maxnum = arr[i]
+    //     }
+    // }
+    // return maxnum
+
+    // return arr.sort((a,b) => a - b).pop()
+
+    return Math.max(...arr)
 }
-max([1, 5, 10, 15]); //15
+// max([1, 5, 10, 15]); //15
 
 
 
