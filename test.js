@@ -11,15 +11,25 @@ I HATE BEETS
 I HATE BEETS
 I HATE BEETS
 ===========================================================*/
-function rant(a) {
-    let upper = a.toUpperCase();
+// function rant(a) {
+//     let upper = a.toUpperCase();
 
-    console.log(upper);
-    console.log(upper);
-    console.log(upper);
+//     console.log(upper);
+//     console.log(upper);
+//     console.log(upper);
 
+// }
+
+const rant = (a) =>{
+    return a.toUpperCase()
 }
-// rant("I hate beets");
+
+console.log(rant("I hate beets"));
+console.log(rant("I hate beets"));
+console.log(rant("I hate beets"));
+
+
+
 
 
 

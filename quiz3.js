@@ -130,14 +130,14 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 function unequal(a, b, c) {
     //return a !== b && ...
     if( a !== b && b !== c && a !== c){
-        console.log(true);
+        return true;
     }
     else{
-        return console.log(false); 
+        return false; 
     }
 
 }
-unequal(1, 3, 2)
+console.log(unequal(1, 3, 1)); 
 
 
 /* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
